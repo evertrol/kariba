@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Particles.hpp"
+#include "constants.hpp"
 
 namespace kariba {
 
@@ -10,7 +11,7 @@ class Thermal : public Particles {
     double Temp, thnorm, theta;
 
   public:
-    Thermal(size_t size);
+    Thermal(size_t size, double mass = constants::emgm);
 
     virtual void set_p();
     virtual void set_ndens();

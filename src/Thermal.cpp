@@ -10,12 +10,7 @@
 namespace kariba {
 
 //! Class constructor to initialize object
-Thermal::Thermal(size_t size) : Particles(size) {
-    thnorm = 1.;
-
-    mass_gr = constants::emgm;
-    mass_kev = constants::emgm * constants::gr_to_kev;
-}
+Thermal::Thermal(size_t size, double mass) : Particles(size, mass) { thnorm = 1.; }
 
 //! Method to initialize momentum array a with default interval
 void Thermal::set_p() {

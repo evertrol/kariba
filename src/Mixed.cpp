@@ -12,12 +12,9 @@
 namespace kariba {
 
 //! Class constructors to initialize object
-Mixed::Mixed(size_t size) : Particles(size) {
+Mixed::Mixed(size_t size, double mass) : Particles(size, mass) {
     thnorm = 1.;
     plnorm = 1.;
-
-    mass_gr = constants::emgm;
-    mass_kev = constants::emgm * constants::gr_to_kev;
 }
 
 //! Methods to set momentum/energy arrays and number density arrays

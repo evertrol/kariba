@@ -5,6 +5,7 @@
 #include <gsl/gsl_spline.h>
 
 #include "Particles.hpp"
+#include "constants.hpp"
 
 namespace kariba {
 
@@ -17,7 +18,7 @@ class Powerlaw : public Particles {
     bool isEfficient;    //!< Proton acceleration
 
   public:
-    Powerlaw(size_t size);
+    Powerlaw(size_t size, double mass = constants::emgm);
 
     virtual void set_p(double min, double ucom, double bfield, double betaeff, double r,
                        double fsc);

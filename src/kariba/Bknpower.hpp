@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Particles.hpp"
+#include "constants.hpp"
 
 namespace kariba {
 
@@ -12,7 +13,7 @@ class Bknpower : public Particles {
     double pmin, pbrk, pmax;
 
   public:
-    Bknpower(size_t size);
+    Bknpower(size_t size, double mass = constants::emgm);
 
     virtual void set_p(double min, double brk, double ucom, double bfield, double betaeff, double r,
                        double fsc);

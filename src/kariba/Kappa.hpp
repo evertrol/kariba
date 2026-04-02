@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Particles.hpp"
+#include "constants.hpp"
 
 namespace kariba {
 
@@ -13,7 +14,7 @@ class Kappa : public Particles {
     double pmin, pmax;
 
   public:
-    Kappa(size_t size);
+    Kappa(size_t size, double mass = constants::emgm);
 
     virtual void set_p(double ucom, double bfield, double betaeff, double r, double fsc);
     virtual void set_p(double max);

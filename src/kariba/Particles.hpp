@@ -86,7 +86,7 @@ class Particles {
                                        //!< density for radiation calculation
 
   public:
-    Particles(size_t size);
+    Particles(size_t size, double mass);
 
     virtual void set_mass(double m);
     virtual void initialize_gdens();

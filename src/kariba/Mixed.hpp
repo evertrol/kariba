@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Particles.hpp"
+#include "constants.hpp"
 
 namespace kariba {
 
@@ -30,7 +31,7 @@ class Mixed : public Particles {
     double plfrac;
 
   public:
-    Mixed(size_t size);
+    Mixed(size_t size, double mass = constants::emgm);
 
     virtual void set_p(double ucom, double bfield, double betaeff, double r, double fsc);
     virtual void set_p(double gmax);

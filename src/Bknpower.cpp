@@ -10,12 +10,7 @@
 
 namespace kariba {
 
-Bknpower::Bknpower(size_t size) : Particles(size) {
-    norm = 1.;
-
-    mass_gr = constants::emgm;
-    mass_kev = constants::emgm * constants::gr_to_kev;
-}
+Bknpower::Bknpower(size_t size, double mass) : Particles(size, mass) { norm = 1.; }
 
 //! Methods to set momentum/energy arrays
 void Bknpower::set_p(double min, double brk, double ucom, double bfield, double betaeff, double r,

@@ -14,12 +14,7 @@
 namespace kariba {
 
 //! Class constructor to initialize object
-Powerlaw::Powerlaw(size_t size) : Particles(size) {
-    plnorm = 1.;
-
-    mass_gr = constants::emgm;
-    mass_kev = constants::emgm * constants::gr_to_kev;
-}
+Powerlaw::Powerlaw(size_t size, double mass) : Particles(size, mass) { plnorm = 1.; }
 
 //! Methods to set momentum/energy arrays
 void Powerlaw::set_p(double min, double ucom, double bfield, double betaeff, double r, double fsc) {

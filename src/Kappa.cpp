@@ -11,13 +11,7 @@
 namespace kariba {
 
 //! Class constructor to initialize object
-Kappa::Kappa(size_t size) : Particles(size) {
-
-    knorm = 1.;
-
-    mass_gr = constants::emgm;
-    mass_kev = constants::emgm * constants::gr_to_kev;
-}
+Kappa::Kappa(size_t size, double mass) : Particles(size, mass) { knorm = 1.; }
 
 //! Method to set the temperature, using ergs as input
 void Kappa::set_temp_kev(double T) {

@@ -10,8 +10,9 @@
 
 namespace kariba {
 
-Particles::Particles(size_t size)
-    : p(size, 0.0), ndens(size, 0.0), gamma(size, 0.0), gdens(size, 0.0), gdens_diff(size, 0.0) {}
+Particles::Particles(size_t size, double mass)
+    : mass_gr(mass), mass_kev(mass * constants::gr_to_kev), p(size, 0.0), ndens(size, 0.0),
+      gamma(size, 0.0), gdens(size, 0.0), gdens_diff(size, 0.0) {}
 
 //! Simple numerical integrals /w trapeze method
 double Particles::count_particles() {
@@ -90,6 +91,7 @@ void Particles::gdens_differentiate() {
 }
 
 void Particles::set_mass(double m) {
+    std::cerr << "`set_mass(m)` is deprecated; initialize the mass in the constructor directly\n";
     mass_gr = m;
     mass_kev = m * constants::gr_to_kev;
 }
